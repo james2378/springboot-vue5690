@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShumabankuaiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShumabankuaiEntity" id="shumabankuaiMap">
+        <result property="chanpinmingcheng" column="chanpinmingcheng"/>
+        <result property="chanpintupian" column="chanpintupian"/>
+        <result property="zonghepingfen" column="zonghepingfen"/>
+        <result property="fenlei" column="fenlei"/>
+        <result property="pinpai" column="pinpai"/>
+        <result property="chanpindingwei" column="chanpindingwei"/>
+        <result property="shangshishijian" column="shangshishijian"/>
+        <result property="peizhixiangqing" column="peizhixiangqing"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShumabankuaiVO" >
+		SELECT * FROM shumabankuai  shumabankuai         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShumabankuaiVO" >
+		SELECT  shumabankuai.* FROM shumabankuai  shumabankuai 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShumabankuaiView" >
+
+		SELECT  shumabankuai.* FROM shumabankuai  shumabankuai 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShumabankuaiView" >
+		SELECT * FROM shumabankuai  shumabankuai <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
